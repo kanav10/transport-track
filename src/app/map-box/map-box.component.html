@@ -1,0 +1,26 @@
+<div>
+    <app-navbar></app-navbar>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" [(ngModel)]="message" placeholder="your message...">
+      <h1>help status</h1>
+      <div *ngFor="let marker of markers | async">
+        <button class="btn btn-debug" (click)="flyTo(marker)">{{ marker.properties.message }}</button>
+        <button class="btn btn-dark" (click)="removeMarker(marker)">Delete</button>
+      </div>
+    </div>
+    <div class="col img-fluid ">
+        <div class="map" id="map" class="height"></div>
+    </div>
+  </div>
+    <!-- </div>
+<input type="text" [(ngModel)]="message" placeholder="your message...">
+<h1>Markers</h1>
+<div *ngFor="let marker of markers | async">
+  <button (click)="flyTo(marker)">{{ marker.properties.message }}</button>
+  <button (click)="removeMarker(marker)">Delete</button> -->
+    <!-- </div> -->
+
+    <!-- <div class="map" id="map" class="height"></div> -->
